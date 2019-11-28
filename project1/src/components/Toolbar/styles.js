@@ -17,4 +17,13 @@ export default StyleSheet.create({
     color: 'white',
     fontSize: 16,
   },
+  count: {
+    flex: 1,
+    alignItems: 'center',
+    fontSize: 32,
+  },
+  countText: {
+    fontWeight: 'bold',
+    fontSize: 32,
+  },
 });
