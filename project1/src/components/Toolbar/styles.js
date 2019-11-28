@@ -13,7 +13,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   toolbarActionText: {
-    forntWeight: 'bold',
+    fontWeight: 'bold',
     color: 'white',
     fontSize: 16,
   },
