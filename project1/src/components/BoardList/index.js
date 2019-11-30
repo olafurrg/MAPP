@@ -1,13 +1,25 @@
-import React from 'react';
-import { View, FlatList, Text, StyleSheet } from 'react-native';
-import BoardThumbnail from '../BoardThumbnail';
+import React, { useMemo } from 'react';
+import { View } from 'react-native';
+import Board from '../Board';
+import styles from './styles';
 
-const BoardList = ({ images }) => (
-  <View style={{ flex: 1 }}>
-    <BoardThumbnail photo={images[0].thumbnailPhoto}/>
-    <BoardThumbnail photo={images[1].thumbnailPhoto}/>
-    <BoardThumbnail photo={images[2].thumbnailPhoto}/>
-  </View>
-);
+const BoardList = ({ boards }) => {
+  const boardIds = useMemo(() => Object.keys(boards), [boards]);
+  return(
+    <View style={styles.boardList}>
+      {boardIds.map((id, index) => {
+        const board = boards[id];
+        return (
+          <Board
+            key={board.name + board.index}
+            id={board.id}
+            name={board.name}
+            thumbnailUrl={board.thumbnailPhoto}
+          />
+        );
+      })}
+    </View>
+  )
+};
 
 export default BoardList;
