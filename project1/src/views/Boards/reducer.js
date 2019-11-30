@@ -3,15 +3,17 @@ import { boards } from '../../resources/data.json';
 
 
 let boardMap = {};
+let boardOrder = [];
 let maxId = 0;
-boards.map((obj) => {
-  if (obj.id > maxId) {
-    maxId = obj.id;
+boards.map((board, index) => {
+  if (board.id > maxId) {
+    maxId = board.id;
   }
-  boardMap[obj.id] = obj;
+  boardOrder[index] = board.id.toString();
+  boardMap[board.id] = board;
 });
 
-const initialState = { boards: boardMap, maxId };
+const initialState = { boards: boardMap, boardOrder, maxId };
 
 const action = {
   CREATE: 'CREATE',

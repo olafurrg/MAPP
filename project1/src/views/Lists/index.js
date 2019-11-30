@@ -10,26 +10,21 @@ const Lists = ({ navigation }) => {
   const { boards } = state;
   const boardId = navigation.getParam('boardId');
 
-  const lists =  useMemo(() => boards[boardId], [boards, boardId]);
+  const listData =  useMemo(() => boards[boardId], [boards, boardId]);
 
   return (
     <ScrollView  style={styles.container}>
       <View style={styles.textView}>
         <Text style={styles.text}>Lists</Text>
         <Text style={styles.text}>{'boardId: ' + boardId}</Text>
-        <Text style={styles.text}>{'Lists: ' + lists.listOrder.length }</Text>
+        <Text style={styles.text}>{'Lists: ' + listData.listOrder.length }</Text>
       </View>
-      <ListList lists={lists}/>
+      <ListList data={listData}/>
     </ScrollView >
   );
 }
 
-Lists.defaultProps = {
-  boardId: undefined,
-};
-
 Lists.propTypes = {
-  boardId: PropTypes.number,
   navigation: PropTypes.shape({ navigate: PropTypes.func }).isRequired,
 };
 

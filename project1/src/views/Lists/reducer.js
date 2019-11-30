@@ -16,7 +16,7 @@ lists.map((list) => {
   boards[list.boardId].lists[list.id] = list;
   boards[list.boardId].lists[list.id].tasks = listTasks[list.id];
   boards[list.boardId].lists[list.id].taskOrder = Object.keys(listTasks[list.id]);
-  boards[list.boardId].listOrder.push(list.id);
+  boards[list.boardId].listOrder.push(list.id.toString());
 });
 const initialState = { boards };
 

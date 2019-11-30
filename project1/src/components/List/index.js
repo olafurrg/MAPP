@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import * as PropTypes from 'prop-types';
 import { View, Text, Animated, PanResponder, Dimensions } from 'react-native';
 import styles from './styles';
 
@@ -60,5 +61,30 @@ const List = ({ isEven, name, color, tasks, taskOrder  }) => {
     </Animated.View>
   );
 }
+
+const taskShape = {
+  id: PropTypes.number,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  isFinished: PropTypes.bool,
+  listId: PropTypes.number,
+};
+
+List.defaultProps = {
+  isEven: false,
+  name: 'List Name',
+  color: '#fff',
+  tasks: {},
+  taskOrder: [],
+};
+
+List.propTypes = {
+  isEven: PropTypes.bool,
+  name: PropTypes.string,
+  color: PropTypes.string,
+  tasks: PropTypes.shape(taskShape),
+  taskOrder: PropTypes.arrayOf(PropTypes.string),
+};
+
 
 export default List;
