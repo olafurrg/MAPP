@@ -1,12 +1,22 @@
 import update from 'immutability-helper';
-import { lists } from '../../resources/data.json';
+import { lists, tasks } from '../../resources/data.json';
 
+let listTasks = {};
 let boards = {};
-lists.map((obj) => {
-  if (typeof boards[obj.boardId] === 'undefined') {
-    boards[obj.boardId] = {};
+tasks.map((task) => {
+  if (typeof listTasks[task.listId] === 'undefined') {
+    listTasks[task.listId] = {};
   }
-  boards[obj.boardId][obj.id] = obj;
+  listTasks[task.listId][task.id] = task;
+});
+lists.map((list) => {
+  if (typeof boards[list.boardId] === 'undefined') {
+    boards[list.boardId] = { lists: {}, listOrder: []};
+  }
+  boards[list.boardId].lists[list.id] = list;
+  boards[list.boardId].lists[list.id].tasks = listTasks[list.id];
+  boards[list.boardId].lists[list.id].taskOrder = Object.keys(listTasks[list.id]);
+  boards[list.boardId].listOrder.push(list.id);
 });
 const initialState = { boards };
 

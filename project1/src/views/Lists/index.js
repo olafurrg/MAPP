@@ -11,16 +11,15 @@ const Lists = ({ navigation }) => {
   const boardId = navigation.getParam('boardId');
 
   const lists =  useMemo(() => boards[boardId], [boards, boardId]);
-  const listIds = useMemo(() => Object.keys(lists), [lists]);
 
   return (
     <ScrollView  style={styles.container}>
       <View style={styles.textView}>
         <Text style={styles.text}>Lists</Text>
         <Text style={styles.text}>{'boardId: ' + boardId}</Text>
-        <Text style={styles.text}>{'Lists: ' + listIds.length }</Text>
-        <ListList lists={lists}/>
+        <Text style={styles.text}>{'Lists: ' + lists.listOrder.length }</Text>
       </View>
+      <ListList lists={lists}/>
     </ScrollView >
   );
 }
