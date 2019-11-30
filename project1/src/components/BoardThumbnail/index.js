@@ -1,5 +1,5 @@
 import React, { useContext, useCallback } from 'react';
-import { Image, View, Text, TouchableHighlight } from 'react-native';
+import { Image, View, Text, TouchableOpacity } from 'react-native';
 import styles from './styles';
 import BoardsContext from '../../views/Boards/context/';
 
@@ -12,12 +12,12 @@ const BoardThumbnail = ({ id, url }) => {
 
   return (
     <View>
-      <TouchableHighlight onPress={handlePress}>
+      <TouchableOpacity onPress={handlePress}>
         <Image
           style={styles.image}
           source={{uri: url}}
         />
-      </TouchableHighlight>
+      </TouchableOpacity>
     </View>
   );
 }

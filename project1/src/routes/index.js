@@ -20,6 +20,7 @@ export default createAppContainer(createStackNavigator(
       }),
     },
   }, {
+    mode: 'card',
     defaultNavigationOptions: {
       headerTitleStyle: { color: '#9a9a9a' },
       headerStyle: {

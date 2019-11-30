@@ -1,18 +1,48 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  container: {
-    top: 100,
-    marginBottom: 20,
+  property: {
     width: '100%',
-    padding: 20,
-    backgroundColor: '#f39e22',
-    borderRadius: 10,
+    padding: 10,
   },
-  text: {
-    marginTop: 12,
-    color: '#463807',
-    fontSize: 22,
+  propertyText: {
+    fontSize: 16,
+    marginBottom: 4,
+  },
+  input: {
+    minHeight: 35,
+    maxHeight: 140,
+    backgroundColor: '#dcdcdc',
+    borderColor: '#000',
+    borderWidth: 1,
+    borderRadius: 6,
+    paddingLeft: 10,
+  },
+  image: {
+    marginTop: 10,
+    width: 'auto',
+    minHeight: 100,
+    height: 100,
+    borderRadius: 6,
+    borderColor: '#000',
+    borderWidth: 1,
+    justifyContent: 'center',
+  },
+  preview: {
+    alignSelf: 'center',
+    color: '#dcdcdc',
+    fontSize: 24,
+  },
+  submit: {
+    height: 35,
+    width: '100%',
+    backgroundColor: '#4caf50',
+    alignContent: 'center',
+    justifyContent: 'center',
+  },
+  submitText: {
+    color: '#000',
     textAlign: 'center',
+    fontSize: 22,
   }
 });

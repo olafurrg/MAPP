@@ -5,6 +5,7 @@ export default StyleSheet.create({
     marginBottom: 20,
     width: '100%',
     padding: 20,
+    paddingTop: 0,
     backgroundColor: '#f39e22',
     borderRadius: 10,
   },
@@ -13,5 +14,9 @@ export default StyleSheet.create({
     color: '#463807',
     fontSize: 22,
     textAlign: 'center',
-  }
+  },
+  close: {
+    width: 40,
+    height: 40,
+  },
 });
