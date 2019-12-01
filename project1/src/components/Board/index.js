@@ -9,8 +9,8 @@ const Board = ({id, name, description, thumbnailUrl}) => {
   return (
     <View style={styles.board}>
       <BoardHeader title={name} id={id} />
-      <View>
-        <Text>
+      <View style={styles.description}>
+        <Text style={styles.descriptionText}>
           {description}
         </Text>
       </View>

@@ -28,18 +28,23 @@ const action = {
 
 const reducer = (state, { type, payload }) => {
   if (type === 'CREATE') {
-    const { name, thumbnailPhoto } = payload;
+    const { boardId, name, color } = payload;
     const { maxId } = state;
     const newMaxId = maxId + 1;
     const newBoard = {
       id: newMaxId,
       name,
-      thumbnailPhoto,
+      color,
     };
     return update(state, {
-      boards: { $push: [newBoard] },
-      maxId: newMaxId,
-    });
+      boards: {
+        [boardId] : {
+          lists: { [newMaxId] : {  $set: newBoard } },
+          listOrder: { $push: [newMaxId.toString()] },
+       },
+      maxId: { $set: newMaxId},
+    }}
+    );
   }
 
   if (type === 'DELETE') {

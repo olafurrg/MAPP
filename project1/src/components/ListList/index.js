@@ -49,13 +49,13 @@ const ListList = ({ data: { lists, listOrder } }) => {
          style={styles.prevList}
          onPress={selectLeft}
       >
-        <Text>Yo</Text>
+        <Text style={styles.nextListText}>{'<'}</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.nextList}
         onPress={selectRight}
       >
-        <Text>Yo</Text>
+        <Text style={styles.nextListText}>{'>'}</Text>
       </TouchableOpacity>
     </View>
   )

@@ -23,6 +23,7 @@ export default StyleSheet.create({
     bottom: 0,
     backgroundColor: 'red',
     width: 35,
+    fontSize: 30,
   },
   nextList: {
     position: 'absolute',
@@ -31,5 +32,9 @@ export default StyleSheet.create({
     bottom: 0,
     backgroundColor: 'red',
     width: 35,
+    fontSize: 30,
+  },
+  nextListText: {
+    fontSize: 30,
   }
 })

@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import * as PropTypes from 'prop-types';
 import { View, Text, Animated, PanResponder, Dimensions } from 'react-native';
+import Task from '../Task';
 import styles from './styles';
 
 const width = Dimensions.get('window').width;
@@ -51,11 +52,13 @@ const List = ({ isEven, name, color, tasks, taskOrder  }) => {
       </Text>
       <View>
         {taskOrder.map((taskId) => (
-          <View key={tasks[taskId].id}>
-            <Text>
-              {tasks[taskId].name}
-            </Text>
-          </View>
+          <Task
+            key={tasks[taskId].id}
+            id={tasks[taskId].id}
+            name={tasks[taskId].name}
+            description={tasks[taskId].description}
+            isFinished={tasks[taskId].isFinished}
+          />
         ))}
       </View>
     </Animated.View>
